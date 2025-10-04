@@ -1,14 +1,16 @@
-'''prompt5
-Write a Python program that writes out a table of the function sin(x) vs. x,
-where x is tabulated between 0 and 2pi with a thousand entries. Follow the basic
-Python program structure, including a main program function.
-'''
+# This program produces a table x vs. sin(x) given an iterable of
+#   x-values from 0 to 2pi (exclusive).
+# Functions:
+#   get_data:
+#     returns a list of x values and a list of sin(x) values
+#   tabulate:
+#     returns a string containing the formatted table of the two input lists 
 
 import numpy as np
 
 
-def get_sin_data(start, stop, num):
-    X = np.linspace(start, stop, num, endpoint=False)
+def get_data(x_start, x_stop, sample_count):
+    X = np.linspace(x_start, x_stop, sample_count, endpoint=False)
     Y = np.sin(X)
     return X, Y
 
@@ -27,7 +29,7 @@ def tabulate(X, Y):
 
 
 def main():
-    x, y = get_sin_data(0, np.pi*2, 1000)
+    x, y = get_data(0, np.pi*2, 1000)
     table = tabulate(x, y)
     print(table)
 
