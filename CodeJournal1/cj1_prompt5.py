@@ -4,7 +4,7 @@
 #   get_data:
 #     returns a list of x values and a list of sin(x) values
 #   tabulate:
-#     returns a string containing the formatted table of the two input lists 
+#     returns a string containing the formatted table of the two input lists
 
 import numpy as np
 
